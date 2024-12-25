@@ -1,0 +1,69 @@
+.contract-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Contract List Section with Background Image */
+.contract-list {
+  background-image: url('/assets/images/signin-up.jpg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff; /* Ensure text is visible on background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contract-item {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for items */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-approve {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-approve:hover {
+  background-color: #218838;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Contract Form Styling */
+.contract-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contract-form input,
+.contract-form select,
+.contract-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

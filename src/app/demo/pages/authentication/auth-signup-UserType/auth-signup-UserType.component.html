@@ -1,0 +1,23 @@
+<div class="signup-selection">
+  <div class="back-button">
+    <button class="btn btn-back" [routerLink]="['/auth/signin']">← Back</button>
+  </div>
+  <h1>Choose Your Role</h1>
+  <div class="button-container">
+    <!-- Nurse Button -->
+    <div class="role-card">
+      <img src="/assets/images/nurse-svgrepo-com.png" alt="Nurse" />
+      <button class="btn btn-primary" [routerLink]="['/auth/signup-Nurse']">
+        Sign Up as Nurse
+      </button>
+    </div>
+
+    <!-- Customer Button -->
+    <div class="role-card">
+      <img src="/assets/images/clients_13192578.png" alt="Customer" />
+      <button class="btn btn-secondary" [routerLink]="['/auth/signup-Customer']">
+        Sign Up as Customer
+      </button>
+    </div>
+  </div>
+</div>

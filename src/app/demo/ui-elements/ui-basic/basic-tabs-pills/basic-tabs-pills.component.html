@@ -1,0 +1,63 @@
+<div class="settings-container">
+  <h1>Settings</h1>
+  
+  <!-- Profile Settings Section -->
+  <section class="settings-section">
+    <h2>Profile Settings</h2>
+    <div class="setting-item">
+      <label for="username">Username</label>
+      <input id="username" type="text" [(ngModel)]="settings.username" />
+    </div>
+    <div class="setting-item">
+      <label for="email">Email</label>
+      <input id="email" type="email" [(ngModel)]="settings.email" />
+    </div>
+  </section>
+
+  <!-- Account Settings Section -->
+  <section class="settings-section">
+    <h2>Account Settings</h2>
+    <div class="setting-item">
+      <label for="password">Change Password</label>
+      <input id="password" type="password" placeholder="New Password" />
+    </div>
+    <button (click)="updatePassword()">Update Password</button>
+  </section>
+
+  <!-- Privacy Settings Section -->
+  <section class="settings-section">
+    <h2>Privacy Settings</h2>
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" [(ngModel)]="settings.privacy.showProfile" />
+        Show Profile to Public
+      </label>
+    </div>
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" [(ngModel)]="settings.privacy.allowMessages" />
+        Allow Direct Messages
+      </label>
+    </div>
+  </section>
+
+  <!-- Notification Settings Section -->
+  <section class="settings-section">
+    <h2>Notification Settings</h2>
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" [(ngModel)]="settings.notifications.email" />
+        Email Notifications
+      </label>
+    </div>
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" [(ngModel)]="settings.notifications.sms" />
+        SMS Notifications
+      </label>
+    </div>
+  </section>
+
+  <!-- Save Button -->
+  <button class="btn-save" (click)="saveSettings()">Save Changes</button>
+</div>

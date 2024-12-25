@@ -1,0 +1,53 @@
+<div class="profile-page" style="background-image: url('/assets/images/profile-bg.jpg'); background-size: cover; background-position: center; padding: 20px;">
+  <div class="profile-container" style="max-width: 800px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px;">
+    <!-- Profile Header -->
+    <header class="profile-header text-center" style="margin-bottom: 20px;">
+      <img [src]="profileImage" alt="{{name}}" class="profile-image" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+      <h1 style="margin: 0; font-size: 24px;">{{ name }}</h1>
+      <p style="color: gray;">{{ location }}</p>
+    </header>
+
+    <!-- Contact Information -->
+    <section class="contact-info" style="margin-bottom: 20px;">
+      <h2 style="font-size: 20px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Contact Information</h2>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Phone:</strong> {{ phone }}</p>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="bio" style="margin-bottom: 20px;">
+      <h2 style="font-size: 20px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">About Me</h2>
+      <p>{{ bio }}</p>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="experience" style="margin-bottom: 20px;">
+      <h2 style="font-size: 20px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Work Experience</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li *ngFor="let job of workExperience" style="margin-bottom: 15px;">
+          <h3 style="margin: 0; font-size: 18px;">{{ job.role }} ({{ job.duration }})</h3>
+          <p style="margin: 5px 0 0;">{{ job.description }}</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" style="margin-bottom: 20px;">
+      <h2 style="font-size: 20px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Education</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li *ngFor="let edu of education" style="margin-bottom: 15px;">
+          <h3 style="margin: 0; font-size: 18px;">{{ edu.degree }}</h3>
+          <p style="margin: 5px 0 0;">{{ edu.institution }} - {{ edu.year }}</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" style="margin-bottom: 20px;">
+      <h2 style="font-size: 20px; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Skills</h2>
+      <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px;">
+        <li *ngFor="let skill of skills" style="background-color: #f0f0f0; border-radius: 15px; padding: 5px 10px; font-size: 14px;">{{ skill }}</li>
+      </ul>
+    </section>
+  </div>
+</div>

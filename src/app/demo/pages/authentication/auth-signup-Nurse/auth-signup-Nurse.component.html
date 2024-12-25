@@ -1,0 +1,112 @@
+<div
+  class="signup-nurse-container d-flex justify-content-center align-items-center"
+  style="min-height: 100vh; background-image: url('/assets/images/signin-up.jpg'); background-size: cover; background-position: center;"
+>
+  <form
+    (ngSubmit)="onSubmit()"
+    class="bg-white p-4 rounded shadow-lg w-100"
+    style="max-width: 600px; overflow-y: auto; max-height: 90vh;"
+  >
+    <h2 class="text-center mb-4">Nurse Registration</h2>
+    <div class="back-button text-start mb-3">
+      <button class="btn btn-link text-decoration-none p-0" [routerLink]="['/auth/signin']">← Back</button>
+    </div>
+
+    <!-- User Details Section -->
+    <div class="form-section mb-4">
+      <h3 class="mb-3">User Details</h3>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="userFname" class="form-label">First Name:</label>
+          <input type="text" id="userFname" class="form-control" [(ngModel)]="userDto.userFirstname" name="userFname" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="usermiddelName" class="form-label">Middle Name:</label>
+          <input type="text" id="usermiddelName" class="form-control" [(ngModel)]="userDto.userMiddelname" name="usermiddelName" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="userLname" class="form-label">Last Name:</label>
+          <input type="text" id="userLname" class="form-control" [(ngModel)]="userDto.userLastname" name="userLname" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" id="username" class="form-control" [(ngModel)]="userDto.userName" name="username" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control" [(ngModel)]="userDto.email" name="email" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" class="form-control" [(ngModel)]="userDto.password" name="password" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phoneNb" class="form-label">Phone Number:</label>
+          <input type="number" id="phoneNb" class="form-control" [(ngModel)]="userDto.phoneNb" name="phoneNb" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="address" class="form-label">Address:</label>
+          <input type="text" id="address" class="form-control" [(ngModel)]="userDto.addres" name="address" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Nurse Details Section -->
+    <div class="form-section mb-4">
+      <h3 class="mb-3">Nurse Details</h3>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="licenseNumber" class="form-label">License Number:</label>
+          <input type="text" id="licenseNumber" class="form-control" [(ngModel)]="userNurseDto.licenseNumber" name="licenseNumber" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="specialization" class="form-label">Specialization:</label>
+          <select
+            id="specialization"
+            class="form-select"
+            [(ngModel)]="specializations"
+            name="specialization"
+            required
+          >
+            <option value="" disabled selected>Select Specialization</option>
+            <option *ngFor="let spec of specializations" [value]="spec.specializationId">{{ spec.nameSpecializattion }}</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="experinceYears" class="form-label">Experience Years:</label>
+          <input type="number" id="experinceYears" class="form-control" [(ngModel)]="userNurseDto.experinceYears" name="experinceYears" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="hourlyRate" class="form-label">Hourly Rate:</label>
+          <input type="number" id="hourlyRate" class="form-control" [(ngModel)]="userNurseDto.hourlyRate" name="hourlyRate" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="availability" class="form-label">Availability:</label>
+          <input type="text" id="availability" class="form-control" [(ngModel)]="userNurseDto.availability" name="availability" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="rating" class="form-label">Rating:</label>
+          <input type="text" id="rating" class="form-control" [(ngModel)]="userNurseDto.rating" name="rating" />
+        </div>
+        <div class="col-12 mb-3">
+          <label for="bio" class="form-label">Bio:</label>
+          <textarea id="bio" class="form-control" [(ngModel)]="userNurseDto.bio" name="bio"></textarea>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="profilePicture" class="form-label">Upload Profile Picture:</label>
+          <input
+            type="file"
+            id="profilePicture"
+            class="form-control"
+            name="profilePicture"
+            accept="image/*"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="messaging-container">
+  <!-- Left Column: User List -->
+  <div class="user-list">
+    <h3>Messages</h3>
+    <div 
+      class="user" 
+      *ngFor="let user of users" 
+      (click)="selectUser(user)"
+      [class.selected]="selectedUser === user"
+    >
+      <img [src]="user.profilePhotoUrl" alt="Profile photo of {{ user.name }}" class="profile-photo" />
+      <div class="user-details">
+        <p class="user-name">{{ user.name }}</p>
+        <p class="user-status" [class.online]="user.isOnline">{{ user.isOnline ? 'Online' : 'Offline' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Chat Box -->
+  <div class="chat-box" *ngIf="selectedUser">
+    <h3>Chat with {{ selectedUser.name }}</h3>
+    <div class="messages">
+      <div *ngFor="let message of selectedUser.messages" [class.sent]="message.isSentByUser" class="message">
+        <p>{{ message.content }}</p>
+      </div>
+    </div>
+    <div class="input-area">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

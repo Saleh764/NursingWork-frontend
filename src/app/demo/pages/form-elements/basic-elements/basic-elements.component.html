@@ -1,0 +1,84 @@
+<div class="contract-container">
+  <h1>Contracts</h1>
+
+  <!-- Contract List Section -->
+  <section class="contract-list">
+    <h2>Existing Contracts</h2>
+    <div
+      *ngFor="let contract of contracts"
+      class="contract-item"
+      [ngClass]="{
+        'ending-soon': isContractEndingSoon(contract.endDate),
+        'active-contract': isContractActive(contract.endDate)
+      }"
+    >
+      <p><strong>Client:</strong> {{ contract.client }}</p>
+      <p><strong>Nurse:</strong> {{ contract.nurse }}</p>
+      <p><strong>Start Date:</strong> {{ contract.startDate }}</p>
+      <p><strong>End Date:</strong> {{ contract.endDate }}</p>
+      <p><strong>Status:</strong> 
+        <span [ngClass]="{'approved': contract.status === 'Approved', 'pending': contract.status === 'Pending'}">
+          {{ contract.status }}
+        </span>
+      </p>
+      <button 
+        class="btn-approve" 
+        *ngIf="contract.status === 'Pending'" 
+        (click)="approveContract(contract.id)">
+        Approve Contract
+      </button>
+      <hr />
+    </div>
+  </section>
+
+  <!-- Contract Form Section -->
+  <section class="contract-form">
+    <h2>Add New Contract</h2>
+    <form (ngSubmit)="addContract()">
+      <label for="client">Client Name</label>
+      <input
+        id="client"
+        type="text"
+        [(ngModel)]="newContract.client"
+        name="client"
+        required
+      />
+
+      <label for="nurse">Nurse Name</label>
+      <input
+        id="nurse"
+        type="text"
+        [(ngModel)]="newContract.nurse"
+        name="nurse"
+        required
+      />
+
+      <label for="startDate">Start Date</label>
+      <input
+        id="startDate"
+        type="date"
+        [(ngModel)]="newContract.startDate"
+        name="startDate"
+        required
+      />
+
+      <label for="endDate">End Date</label>
+      <input
+        id="endDate"
+        type="date"
+        [(ngModel)]="newContract.endDate"
+        name="endDate"
+        required
+      />
+
+      <label for="status">Status</label>
+      <select id="status" [(ngModel)]="newContract.status" name="status">
+        <option value="Pending">Pending</option>
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Add Contract</button>
+    </form>
+  </section>
+</div>

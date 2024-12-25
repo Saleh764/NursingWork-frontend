@@ -1,0 +1,85 @@
+.profile-page {
+  background-image: url('/assets/images/signin-up.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+
+  .profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      p {
+        color: gray;
+      }
+    }
+
+    section {
+      margin-bottom: 20px;
+
+      h2 {
+        font-size: 20px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 15px;
+
+          h3 {
+            margin: 0;
+            font-size: 18px;
+          }
+
+          p {
+            margin: 5px 0 0;
+          }
+        }
+      }
+    }
+
+    .skills {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        li {
+          background-color: #f0f0f0;
+          border-radius: 15px;
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

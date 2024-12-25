@@ -1,0 +1,76 @@
+.signup-selection {
+  height: 100vh; /* Make it fill the entire viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+  font-family: Arial, sans-serif;
+  background: url(/assets/images/91996.jpg);
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px; /* Add space between the role cards */
+}
+
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0a99db;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.role-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.role-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+button.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary {
+  background-color: #1877f2;
+  color: #fff;
+}
+
+button.btn-primary:hover {
+  background-color: #155db0;
+}
+
+button.btn-secondary {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button.btn-secondary:hover {
+  background-color: #3d8b40;
+}

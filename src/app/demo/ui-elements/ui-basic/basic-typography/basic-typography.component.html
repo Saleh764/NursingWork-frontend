@@ -1,0 +1,6 @@
+<div class="lockscreen-container" (click)="showNeedle()">
+  <div *ngIf="showIcon" class="icon-container">
+    <img src="assets/icons/hypodermic-needle.svg" alt="Hypodermic Needle Icon" />
+  </div>
+  <p *ngIf="!showIcon">Click anywhere to reveal the needle icon</p>
+</div>
